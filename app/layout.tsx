@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="es"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-screen bg-white text-gray-900" suppressHydrationWarning>
+      <body className="min-h-screen bg-white font-sans text-gray-900" suppressHydrationWarning>
         <SearchProvider>
           <Header />
           <main className="flex-1 pb-20 sm:pb-0">

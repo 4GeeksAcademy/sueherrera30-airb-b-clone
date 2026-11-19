@@ -1,5 +1,6 @@
 import Container from '../ui/Container';
 import Divider from '../ui/Divider';
+import Link from 'next/link';
 
 const Footer = () => {
   const footerSections = [
@@ -30,12 +31,9 @@ const Footer = () => {
               <ul className="space-y-3">
                 {section.links.map((link) => (
                   <li key={link}>
-                    <a
-                      href="#"
-                      className="text-gray-600 hover:text-gray-900 text-sm transition-colors"
-                    >
+                    <span className="text-gray-600 text-sm">
                       {link}
-                    </a>
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -51,12 +49,18 @@ const Footer = () => {
             © 2026 Airbnb Clone. Todos los derechos reservados.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-gray-600 hover:text-gray-900 text-sm transition-colors">
+            <Link href="/" className="text-gray-600 hover:text-gray-900 text-sm transition-colors">
+              Inicio
+            </Link>
+            <Link href="/catalog" className="text-gray-600 hover:text-gray-900 text-sm transition-colors">
+              Catálogo
+            </Link>
+            <span className="text-gray-600 text-sm">
               Privacidad
-            </a>
-            <a href="#" className="text-gray-600 hover:text-gray-900 text-sm transition-colors">
+            </span>
+            <span className="text-gray-600 text-sm">
               Términos
-            </a>
+            </span>
           </div>
         </div>
       </Container>

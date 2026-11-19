@@ -4,13 +4,13 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Suspense } from 'react';
 
-function MobileBottomNavContent() {
+const MobileBottomNavContent = () => {
   const pathname = usePathname();
 
   const navItems = [
     { href: '/', icon: 'explore', label: 'Explorar' },
-    { href: '/catalog', icon: 'catalog', label: 'Catálogo' },
-    { href: '#', icon: 'user', label: 'Perfil' },
+    { href: '/favorites', icon: 'favorites', label: 'Favoritos' },
+    { href: '/login', icon: 'login', label: 'Iniciar sesión' },
   ];
 
   const getIcon = (iconName: string) => {
@@ -25,6 +25,12 @@ function MobileBottomNavContent() {
         return (
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        );
+      case 'favorites':
+        return (
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
           </svg>
         );
       case 'user':
@@ -59,7 +65,7 @@ function MobileBottomNavContent() {
       </div>
     </nav>
   );
-}
+};
 
 const MobileBottomNav = () => {
   return (

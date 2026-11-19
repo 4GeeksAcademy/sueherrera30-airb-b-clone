@@ -7,6 +7,7 @@ import Title from './components/ui/Title';
 import { mockProperties } from './data/properties';
 import type { PropertyListing } from './data/properties';
 import { useListingSearch } from './components/providers/SearchProvider';
+import { filterProperties } from './utils/filterProperties';
 
 export default function Home() {
   const [properties, setProperties] = useState<PropertyListing[]>([]);
@@ -27,13 +28,8 @@ export default function Home() {
     setActiveCategory(categoryId);
   };
 
-  const normalizedSearch = searchTerm.trim().toLocaleLowerCase();
-  const matchingProperties = properties.filter((property) => {
-    const matchesCategory = !activeCategory || property.category === activeCategory;
-    const searchableText = `${property.title} ${property.location} ${property.description}`.toLocaleLowerCase();
-    return matchesCategory && searchableText.includes(normalizedSearch);
-  });
-  const visibleProperties = activeCategory || normalizedSearch
+  const matchingProperties = filterProperties(properties, searchTerm, activeCategory);
+  const visibleProperties = activeCategory || searchTerm.trim()
     ? matchingProperties
     : matchingProperties.slice(0, 8);
 
