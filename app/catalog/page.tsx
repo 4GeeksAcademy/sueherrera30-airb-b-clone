@@ -1,40 +1,69 @@
-'use client'
+'use client';
 
-import Link from 'next/link'
+import { useState, useEffect } from 'react';
+import { ListingsGrid, PropertyCard, ResultsHeader, MapArea } from '../components/features';
+import { mockProperties } from '../data/properties';
+import type { PropertyListing } from '../data/properties';
 
 export default function Catalog() {
-  return (
-    <div className="min-h-screen bg-gray-50 p-6">
-      <div className="max-w-4xl mx-auto">
-        {/* Navegación superior */}
-        <nav className="flex items-center gap-4 mb-8">
-          <Link
-            href="/"
-            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white border border-gray-300 hover:bg-gray-100 transition-colors"
-            title="Ir al inicio"
-          >
-            ↑
-          </Link>
-          <h1 className="text-2xl font-bold">Catálogo</h1>
-        </nav>
+  const [properties, setProperties] = useState<PropertyListing[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
 
-        {/* Contenido principal */}
-        <div className="bg-white rounded-lg shadow p-8 mb-6">
-          <p className="text-gray-600 text-lg mb-4">Bienvenido al catálogo de alojamientos</p>
-          <p className="text-gray-500">Aquí encontrarás todas nuestras propiedades disponibles.</p>
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const sorted = [...mockProperties].sort((a, b) => {
+        return sortOrder === 'asc' ? a.price - b.price : b.price - a.price;
+      });
+      setProperties(sorted);
+      setIsLoading(false);
+    }, 500);
+    
+    return () => clearTimeout(timer);
+  }, [sortOrder]);
+
+  return (
+    <div className="bg-white">
+      {/* Results Header with Sort Options */}
+      <ResultsHeader
+        total={properties.length}
+        onSortChange={(order) => {
+          setIsLoading(true);
+          setSortOrder(order);
+        }}
+      />
+
+      {/* Main Content Grid */}
+      <div className="lg:grid lg:grid-cols-3 lg:gap-6 lg:max-w-7xl lg:mx-auto lg:px-6">
+        {/* Listings Column */}
+        <div className="lg:col-span-2">
+          <ListingsGrid isLoading={isLoading}>
+            {properties.map((property) => (
+              <PropertyCard
+                key={property.id}
+                id={property.id}
+                title={property.title}
+                location={property.location}
+                price={property.price}
+                rating={property.rating}
+                reviewCount={property.reviewCount}
+                image={property.images[0]}
+                isNew={property.isNew}
+              />
+            ))}
+          </ListingsGrid>
         </div>
 
-        {/* Botón para ir a detalle */}
-        <div className="flex gap-4">
-          <Link
-            href="/rooms/1"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            Ver detalle de propiedad
-            <span>→</span>
-          </Link>
+        {/* Map Column - Visible only on desktop */}
+        <div className="hidden lg:block sticky top-20 h-fit">
+          <MapArea />
         </div>
       </div>
+
+      {/* Mobile Map - Visible only on mobile */}
+      <div className="lg:hidden">
+        <MapArea />
+      </div>
     </div>
-  )
+  );
 }

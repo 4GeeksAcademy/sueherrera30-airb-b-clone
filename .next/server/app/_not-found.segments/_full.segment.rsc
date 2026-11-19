@@ -1,34 +1,46 @@
 1:"$Sreact.fragment"
-2:"/_next/static/chunks/0wj0noag-9_fs.js"
-3:I[39756,["$2"],"default"]
-4:I[37457,["$2"],"default"]
-9:I[97367,["$2"],"OutletBoundary"]
-a:"$Sreact.suspense"
-d:"ViewportBoundary"
-e:I[97367,["$2"],"$d"]
-10:"MetadataBoundary"
-11:I[97367,["$2"],"$10"]
-14:I[68027,["$2"],"default",1]
-:HL["/_next/static/chunks/3nhknwtwt0xwu.css","style"]
-5:X
-7:X
+2:"/_next/static/chunks/1na0fjb04scf3.js"
+3:I[56132,["$2"],"default"]
+4:I[39756,["$2"],"default"]
+5:I[37457,["$2"],"default"]
+15:I[68027,["$2"],"default",1]
+:HL["/_next/static/chunks/3k93hjheiqq1z.css","style"]
 c:X
-8:[["children",{"s":"__PAGE__","h":514,"d":{"r":["$","$1","c",{"children":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":"$0:t:t:d:r:props:children:1:props:children:props:children:props:notFound:0:1:props:style","children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":"$0:t:t:d:r:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:1:props:style","children":404}],["$","div",null,{"style":"$0:t:t:d:r:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:2:props:style","children":["$","h2",null,{"style":"$0:t:t:d:r:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:2:props:children:props:style","children":"This page could not be found."}]}]]}]}]],null,["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]]}],"p":true,"v":"$c"}}]]
-6:[["children",{"s":"/_not-found","h":514,"d":{"r":["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],"p":true,"v":"$7"},"c":"$Q8"}]]
-13:X
-15:X
-16:X
-0:{"P":null,"c":["","_not-found"],"q":"","i":false,"t":{"t":{"s":"","h":530,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/3nhknwtwt0xwu.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/0wj0noag-9_fs.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","className":"T19VSG_variable _8Li5zG_variable h-full antialiased","children":["$","body",null,{"className":"min-h-full flex flex-col","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]]}],"p":true,"v":"$5"},"c":"$Q6"},"h":{"r":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$Le",null,{"children":"$Lf"}],["$","$L11",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$a",null,{"name":"Next.Metadata","children":"$L12"}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":true,"v":"$13"}},"m":"$undefined","G":["$14",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/3nhknwtwt0xwu.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"r":"$15","s":"$16","a":"$@17","l":"$undefined","p":"$undefined","d":"$undefined","b":"_B0lvEtGRV1buz37af8Tr","u":"$@18"}
-7:C
-16:300
-f:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
-19:I[27201,["$2"],"IconMark"]
-b:null
-12:[["$","title","0",{"children":"Create Next App"}],["$","meta","1",{"name":"description","content":"Generated by create next app"}],["$","link","2",{"rel":"icon","href":"/favicon.ico?favicon.117ezoe8m31dk.ico","sizes":"48x48","type":"image/x-icon"}],["$","$L19","3",{}]]
-16:C
-13:C
-15:C
+f:X
+12:X
+10:[["children",{"s":"__PAGE__","h":514,"d":{"r":"$L11","p":true,"v":"$12"}}]]
+d:[["children",{"s":"/_not-found","h":514,"d":{"r":"$Le","p":true,"v":"$f"},"c":"$Q10"}]]
+14:X
+17:X
+18:X
+0:{"P":null,"c":["","_not-found"],"q":"","i":false,"t":{"t":{"s":"","h":530,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/3k93hjheiqq1z.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/1na0fjb04scf3.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"es","className":"T19VSG_variable _8Li5zG_variable h-full antialiased scroll-smooth","children":["$","body",null,{"className":"min-h-screen bg-white text-gray-900","suppressHydrationWarning":true,"children":[["$","$L3",null,{}],["$","main",null,{"className":"flex-1 pb-20 sm:pb-0","children":["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"bg-gray-50 mt-12 sm:mt-16 pt-8 sm:pt-12 pb-20 sm:pb-8","children":["$","div",null,{"className":"mx-auto px-4 sm:px-6 max-w-5xl ","children":[["$","div",null,{"className":"grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 pb-8","children":[["$","div","Atención al cliente",{"children":[["$","h3",null,{"className":"font-semibold text-gray-900 text-sm mb-4","children":"Atención al cliente"}],["$","ul",null,{"className":"space-y-3","children":[["$","li","Centro de ayuda",{"children":["$","a",null,{"href":"#","className":"text-gray-600 hover:text-gray-900 text-sm transition-colors","children":"Centro de ayuda"}]}],["$","li","Seguridad",{"children":["$","a",null,{"href":"#","className":"text-gray-600 hover:text-gray-900 text-sm transition-colors","children":"Seguridad"}]}],["$","li","Cancelaciones",{"children":["$","a",null,{"href":"#","className":"text-gray-600 hover:text-gray-900 text-sm transition-colors","children":"Cancelaciones"}]}],["$","li","Resseñas",{"children":["$","a",null,{"href":"#","className":"text-gray-600 hover:text-gray-900 text-sm transition-colors","children":"Resseñas"}]}]]}]]}],["$","div","Alojamiento",{"children":[["$","h3",null,{"className":"font-semibold text-gray-900 text-sm mb-4","children":"Alojamiento"}],["$","ul",null,{"className":"space-y-3","children":[["$","li","Alquilar tu hogar",{"children":["$","a",null,{"href":"#","className":"text-gray-600 hover:text-gray-900 text-sm transition-colors","children":"Alquilar tu hogar"}]}],["$","li","Anfitrión profesional",{"children":["$","a",null,{"href":"#","className":"text-gray-600 hover:text-gray-900 text-sm transition-colors","children":"Anfitrión profesional"}]}],["$","li","Publicar tu negocio",{"children":["$","a",null,{"href":"#","className":"text-gray-600 hover:text-gray-900 text-sm transition-colors","children":"Publicar tu negocio"}]}],["$","li","Centro de anfitriones",{"children":["$","a",null,{"href":"#","className":"text-gray-600 hover:text-gray-900 text-sm transition-colors","children":"Centro de anfitriones"}]}]]}]]}],["$","div","Airbnb",{"children":[["$","h3",null,{"className":"font-semibold text-gray-900 text-sm mb-4","children":"Airbnb"}],["$","ul",null,{"className":"space-y-3","children":[["$","li","Newsroom",{"children":["$","a",null,{"href":"#","className":"text-gray-600 hover:text-gray-900 text-sm transition-colors","children":"Newsroom"}]}],["$","li","Nuevas características",{"children":"$L6"}],"$L7","$L8"]}]]}]]}],"$L9","$La"]}]}],"$Lb"]}]}]]}],"p":true,"v":"$c"},"c":"$Qd"},"h":{"r":"$L13","p":true,"v":"$14"}},"m":"$undefined","G":["$15",["$L16"]],"S":true,"r":"$17","s":"$18","a":"$@19","l":"$undefined","p":"$undefined","d":"$undefined","b":"em68mtgy0XMT0wGWS3zFi","u":"$@1a"}
+1b:I[26288,["$2"],"default"]
+1c:I[97367,["$2"],"OutletBoundary"]
+1d:"$Sreact.suspense"
+1f:"ViewportBoundary"
+20:I[97367,["$2"],"$1f"]
+22:"MetadataBoundary"
+23:I[97367,["$2"],"$22"]
+6:["$","a",null,{"href":"#","className":"text-gray-600 hover:text-gray-900 text-sm transition-colors","children":"Nuevas características"}]
+7:["$","li","Empleos",{"children":["$","a",null,{"href":"#","className":"text-gray-600 hover:text-gray-900 text-sm transition-colors","children":"Empleos"}]}]
+8:["$","li","Inversores",{"children":["$","a",null,{"href":"#","className":"text-gray-600 hover:text-gray-900 text-sm transition-colors","children":"Inversores"}]}]
+9:["$","div",null,{"className":"h-px bg-gray-200 my-8"}]
+a:["$","div",null,{"className":"flex flex-col sm:flex-row items-center justify-between gap-4","children":[["$","p",null,{"className":"text-gray-600 text-sm text-center sm:text-left","children":"© 2026 Airbnb Clone. Todos los derechos reservados."}],["$","div",null,{"className":"flex items-center gap-6","children":[["$","a",null,{"href":"#","className":"text-gray-600 hover:text-gray-900 text-sm transition-colors","children":"Privacidad"}],["$","a",null,{"href":"#","className":"text-gray-600 hover:text-gray-900 text-sm transition-colors","children":"Términos"}]]}]]}]
+b:["$","$L1b",null,{}]
+e:["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+11:["$","$1","c",{"children":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":"$0:t:t:d:r:props:children:1:props:children:props:children:1:props:children:props:notFound:0:1:props:style","children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":"$0:t:t:d:r:props:children:1:props:children:props:children:1:props:children:props:notFound:0:1:props:children:props:children:1:props:style","children":404}],["$","div",null,{"style":"$0:t:t:d:r:props:children:1:props:children:props:children:1:props:children:props:notFound:0:1:props:children:props:children:2:props:style","children":["$","h2",null,{"style":"$0:t:t:d:r:props:children:1:props:children:props:children:1:props:children:props:notFound:0:1:props:children:props:children:2:props:children:props:style","children":"This page could not be found."}]}]]}]}]],null,["$","$L1c",null,{"children":["$","$1d",null,{"name":"Next.MetadataOutlet","children":"$@1e"}]}]]}]
+13:["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L20",null,{"children":"$L21"}],["$","$L23",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$1d",null,{"name":"Next.Metadata","children":"$L24"}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+16:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/3k93hjheiqq1z.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+f:C
+18:300
+21:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+25:I[27201,["$2"],"IconMark"]
+1e:null
+24:[["$","title","0",{"children":"Airbnb Clone - Encuentra tu alojamiento ideal"}],["$","meta","1",{"name":"description","content":"Plataforma de alquiler vacacional. Explora, filtra y reserva los mejores alojamientos en playas de todo el mundo."}],["$","link","2",{"rel":"icon","href":"/favicon.ico?favicon.117ezoe8m31dk.ico","sizes":"48x48","type":"image/x-icon"}],["$","$L25","3",{}]]
+18:C
+14:C
+17:C
+12:C
 c:C
-5:C
-18:false
-17:null
+1a:false
+19:null

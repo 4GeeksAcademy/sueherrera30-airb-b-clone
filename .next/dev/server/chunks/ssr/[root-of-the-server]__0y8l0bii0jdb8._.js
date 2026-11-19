@@ -11,16 +11,23 @@ var mod = __turbopack_context__.x("next/dist/shared/lib/no-fallback-error.extern
 
 module.exports = mod;
 }),
-"[project]/app/favicon.ico (static in ecmascript, tag client)", (() => {{
+"[project]/app/favicon.ico (static in ecmascript, tag client)", ((__turbopack_context__) => {
 
-throw new Error("An error occurred while generating the chunk item [project]/app/favicon.ico (static in ecmascript, tag client)\n\nCaused by:\n- Missing content when trying to generate the content hash for static asset\n\nDebug info:\n- An error occurred while generating the chunk item [project]/app/favicon.ico (static in ecmascript, tag client)\n- Execution of <StaticUrlJsModule as EcmascriptChunkPlaceable>::chunk_item_content failed\n- Execution of <NodeJsChunkingContext as ChunkingContext>::asset_path failed\n- Missing content when trying to generate the content hash for static asset");
+__turbopack_context__.v("/_next/static/media/favicon.117ezoe8m31dk.ico" + (globalThis["NEXT_CLIENT_ASSET_SUFFIX"] || ''));}),
+"[project]/app/favicon.ico.mjs { IMAGE => \"[project]/app/favicon.ico (static in ecmascript, tag client)\" } [app-rsc] (structured image object, ecmascript)", ((__turbopack_context__) => {
+"use strict";
 
-}}),
-"[project]/app/favicon.ico.mjs { IMAGE => \"[project]/app/favicon.ico (static in ecmascript, tag client)\" } [app-rsc] (structured image object, ecmascript)", ((__turbopack_context__, module, exports) => {
-
-var e = new Error("Could not parse module '[project]/app/favicon.ico.mjs'\n\nInput image not found\n\nDebug info:\n- Execution of <StructuredImageFileSource as Asset>::content failed\n- Execution of get_meta_data failed\n- Input image not found");
-e.code = 'MODULE_UNPARSABLE';
-throw e;
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$favicon$2e$ico__$28$static__in__ecmascript$2c$__tag__client$29$__ = __turbopack_context__.i("[project]/app/favicon.ico (static in ecmascript, tag client)");
+;
+const __TURBOPACK__default__export__ = {
+    src: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$favicon$2e$ico__$28$static__in__ecmascript$2c$__tag__client$29$__["default"],
+    width: 48,
+    height: 48
+};
 }),
 "[project]/app/rooms/[id]/page.tsx [app-rsc] (client reference proxy)", ((__turbopack_context__) => {
 "use strict";
@@ -36,11 +43,12 @@ const __TURBOPACK__default__export__ = (0, __TURBOPACK__imported__module__$5b$pr
     throw new Error("Attempted to call the default export of [project]/app/rooms/[id]/page.tsx from the server, but it's on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.");
 }, "[project]/app/rooms/[id]/page.tsx", "default");
 }),
-"[project]/app/rooms/[id]/page.tsx [app-rsc] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/app/rooms/[id]/page.tsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
 
-var e = new Error("Could not parse module '[project]/app/rooms/[id]/page.tsx', file not found");
-e.code = 'MODULE_UNPARSABLE';
-throw e;
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$rooms$2f5b$id$5d2f$page$2e$tsx__$5b$app$2d$rsc$5d$__$28$client__reference__proxy$29$__ = __turbopack_context__.i("[project]/app/rooms/[id]/page.tsx [app-rsc] (client reference proxy)");
+;
+__turbopack_context__.n(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$rooms$2f5b$id$5d2f$page$2e$tsx__$5b$app$2d$rsc$5d$__$28$client__reference__proxy$29$__);
 }),
 "[project]/app/rooms/[id]/page.tsx [app-rsc] (ecmascript, Next.js Server Component)", (function(__turbopack_context__){
 

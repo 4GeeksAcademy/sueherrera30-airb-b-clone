@@ -28,16 +28,7 @@
       "routeKeys": {
         "nxtPid": "nxtPid"
       },
-      "namedRegex": "^/rooms/(?<nxtPid>[^/]+?)(?:/)?$",
-      "prefetchSegmentDataRoutes": [
-        {
-          "destination": "/rooms/[id].segments/rooms/$d$id$segment",
-          "source": "^/rooms/(?<nxtPid>[^/]+?)\\.segments/rooms/\\$d\\$id(?<segment>/__PAGE__\\.segment\\.rsc|\\.segment\\.rsc)(?:/)?$",
-          "routeKeys": {
-            "nxtPid": "nxtPid"
-          }
-        }
-      ]
+      "namedRegex": "^/rooms/(?<nxtPid>[^/]+?)(?:/)?$"
     }
   ],
   "staticRoutes": [

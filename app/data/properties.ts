@@ -1,0 +1,256 @@
+export interface PropertyListing {
+  id: string;
+  title: string;
+  location: string;
+  price: number;
+  rating: number;
+  reviewCount: number;
+  isNew?: boolean;
+  category: string;
+  description: string;
+  maxGuests: number;
+  host: {
+    name: string;
+    avatarUrl: string;
+    yearsHosting: number;
+    isSuperhost: boolean;
+  };
+  amenities: string[];
+  images: string[];
+}
+
+const photo = (id: string, width = 1200) =>
+  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=85`;
+
+export const mockProperties: PropertyListing[] = [
+  {
+    id: '1',
+    title: 'Casa de playa entre palmeras',
+    location: 'Puerto Morelos, México',
+    price: 150,
+    rating: 4.92,
+    reviewCount: 48,
+    isNew: true,
+    category: 'beach',
+    description: 'Despierta con la brisa del Caribe en esta casa luminosa a unos pasos de la playa. Tiene terraza privada entre palmeras, cocina equipada y espacio de sobra para compartir después de un día de mar.',
+    maxGuests: 6,
+    host: { name: 'Mariana López', avatarUrl: photo('photo-1534528741775-53994a69daeb', 240), yearsHosting: 5, isSuperhost: true },
+    amenities: ['Acceso a la playa', 'Terraza privada', 'Cocina equipada', 'Aire acondicionado', 'WiFi', 'Estacionamiento gratuito'],
+    images: [
+      photo('photo-1499793983690-e29da59ef1c2'),
+      photo('photo-1600607687939-ce8a6c25118c'),
+      photo('photo-1600210492486-724fe5c67fb0'),
+      photo('photo-1507525428034-b723cf961d3e'),
+    ],
+  },
+  {
+    id: '2',
+    title: 'Loft sereno cerca de la Quinta Avenida',
+    location: 'Playa del Carmen, México',
+    price: 120,
+    rating: 4.81,
+    reviewCount: 36,
+    category: 'modern',
+    description: 'Un loft contemporáneo y tranquilo para tenerlo todo cerca: cafés, restaurantes y la playa. Después de explorar la ciudad, relájate en la piscina del edificio o prepara algo sencillo en la cocina.',
+    maxGuests: 3,
+    host: { name: 'Diego Herrera', avatarUrl: photo('photo-1500648767791-00dcc994a43e', 240), yearsHosting: 3, isSuperhost: true },
+    amenities: ['Piscina compartida', 'Cocina equipada', 'Aire acondicionado', 'WiFi', 'Espacio de trabajo', 'Ascensor'],
+    images: [
+      photo('photo-1600210492486-724fe5c67fb0'),
+      photo('photo-1600607687939-ce8a6c25118c'),
+      photo('photo-1600566753086-00f18fb6b3ea'),
+      photo('photo-1571896349842-33c89424de2d'),
+    ],
+  },
+  {
+    id: '3',
+    title: 'Villa de piedra con piscina privada',
+    location: 'Tulum, México',
+    price: 250,
+    rating: 4.97,
+    reviewCount: 63,
+    category: 'mansion',
+    description: 'Villa rodeada de vegetación tropical, con piscina privada y espacios abiertos de inspiración local. Ideal para bajar el ritmo, cocinar en grupo y descubrir las playas y cenotes de Tulum.',
+    maxGuests: 8,
+    host: { name: 'Lucía Méndez', avatarUrl: photo('photo-1544005313-94ddf0286df2', 240), yearsHosting: 7, isSuperhost: true },
+    amenities: ['Piscina privada', 'Jardín tropical', 'Cocina completa', 'Aire acondicionado', 'WiFi', 'Parrilla'],
+    images: [
+      photo('photo-1613490493576-7fde63acd811'),
+      photo('photo-1600585154340-be6161a56a0c'),
+      photo('photo-1600607687920-4e2a09cf159d'),
+      photo('photo-1575429198097-ecb2f3c6b14d'),
+    ],
+  },
+  {
+    id: '4',
+    title: 'Cabaña de madera con vista al mar',
+    location: 'Sayulita, México',
+    price: 95,
+    rating: 4.76,
+    reviewCount: 29,
+    category: 'camping',
+    description: 'Una cabaña acogedora en una colina verde, con balcón para ver el atardecer y el sonido del mar de fondo. El centro de Sayulita y sus playas están a un paseo corto.',
+    maxGuests: 4,
+    host: { name: 'Andrés Navarro', avatarUrl: photo('photo-1506794778202-cad84cf45f1d', 240), yearsHosting: 4, isSuperhost: false },
+    amenities: ['Balcón con vista al mar', 'Cocina pequeña', 'Ventiladores de techo', 'WiFi', 'Hamaca', 'Estacionamiento gratuito'],
+    images: [
+      photo('photo-1510798831971-661eb04b3739'),
+      photo('photo-1449158743715-0a90ebb6d2d8'),
+      photo('photo-1449158743715-0a90ebb6d2d8'),
+      photo('photo-1507525428034-b723cf961d3e'),
+    ],
+  },
+  {
+    id: '5',
+    title: 'Penthouse con terraza frente al Pacífico',
+    location: 'Puerto Vallarta, México',
+    price: 180,
+    rating: 4.89,
+    reviewCount: 51,
+    category: 'trending',
+    description: 'Penthouse con terraza amplia y vistas abiertas a la bahía. A pocos minutos del malecón, combina tardes de piscina, cenas al aire libre y fácil acceso a los restaurantes del centro.',
+    maxGuests: 5,
+    host: { name: 'Sofía Castillo', avatarUrl: photo('photo-1551836022-d5d88e9218df', 240), yearsHosting: 6, isSuperhost: true },
+    amenities: ['Terraza privada', 'Piscina compartida', 'Cocina completa', 'Aire acondicionado', 'WiFi', 'Lavadora'],
+    images: [
+      photo('photo-1600607687939-ce8a6c25118c'),
+      photo('photo-1600566753086-00f18fb6b3ea'),
+      photo('photo-1571896349842-33c89424de2d'),
+      photo('photo-1519046904884-53103b34b206'),
+    ],
+  },
+  {
+    id: '6',
+    title: 'Bungalow de jardín en Isla Mujeres',
+    location: 'Isla Mujeres, México',
+    price: 110,
+    rating: 4.84,
+    reviewCount: 33,
+    isNew: true,
+    category: 'beach',
+    description: 'Bungalow independiente rodeado de buganvilias, con una terraza fresca para desayunar sin prisa. La playa y los restaurantes del pueblo quedan a pocos minutos en bicicleta.',
+    maxGuests: 2,
+    host: { name: 'Gabriel Torres', avatarUrl: photo('photo-1507003211169-0a1dd7228f2d', 240), yearsHosting: 2, isSuperhost: false },
+    amenities: ['Terraza privada', 'Jardín', 'Cocina equipada', 'Aire acondicionado', 'WiFi', 'Bicicletas'],
+    images: [
+      photo('photo-1600585154340-be6161a56a0c'),
+      photo('photo-1600566753086-00f18fb6b3ea'),
+      photo('photo-1600210492486-724fe5c67fb0'),
+      photo('photo-1507525428034-b723cf961d3e'),
+    ],
+  },
+  {
+    id: '7',
+    title: 'Casa colonial con patio y piscina',
+    location: 'Mérida, México',
+    price: 85,
+    rating: 4.78,
+    reviewCount: 42,
+    category: 'modern',
+    description: 'Casa restaurada en el centro histórico, con muros de piedra, patio sombreado y una pequeña piscina para refrescarse. Una base con mucho carácter para recorrer Mérida y probar su cocina.',
+    maxGuests: 4,
+    host: { name: 'Elena Pacheco', avatarUrl: photo('photo-1531123897727-8f129e1688ce', 240), yearsHosting: 8, isSuperhost: true },
+    amenities: ['Piscina privada', 'Patio interior', 'Cocina equipada', 'Aire acondicionado', 'WiFi', 'Lavadora'],
+    images: [
+      photo('photo-1600607687920-4e2a09cf159d'),
+      photo('photo-1600210492486-724fe5c67fb0'),
+      photo('photo-1600566753086-00f18fb6b3ea'),
+      photo('photo-1571896349842-33c89424de2d'),
+    ],
+  },
+  {
+    id: '8',
+    title: 'Refugio junto al mar en Los Cabos',
+    location: 'San José del Cabo, México',
+    price: 300,
+    rating: 4.96,
+    reviewCount: 57,
+    category: 'mansion',
+    description: 'Un refugio espacioso de líneas limpias, con piscina y vistas al paisaje desértico junto al mar. Perfecto para compartir una estancia especial con acceso a playas, campos de golf y restaurantes.',
+    maxGuests: 8,
+    host: { name: 'Valeria Ríos', avatarUrl: photo('photo-1544005313-94ddf0286df2', 240), yearsHosting: 9, isSuperhost: true },
+    amenities: ['Piscina privada', 'Vista al mar', 'Terraza', 'Cocina completa', 'Aire acondicionado', 'WiFi'],
+    images: [
+      photo('photo-1613977257363-707ba9348227'),
+      photo('photo-1613490493576-7fde63acd811'),
+      photo('photo-1600585154340-be6161a56a0c'),
+      photo('photo-1575429198097-ecb2f3c6b14d'),
+    ],
+  },
+  {
+    id: '9',
+    title: 'Suite luminosa a pasos de la caleta',
+    location: 'Akumal, México',
+    price: 160,
+    rating: 4.87,
+    reviewCount: 25,
+    category: 'beach',
+    description: 'Suite cómoda y luminosa en una comunidad tranquila junto al mar. Desde aquí puedes nadar en la caleta, explorar los arrecifes cercanos y volver a descansar en una terraza rodeada de verde.',
+    maxGuests: 3,
+    host: { name: 'Tomás Aguilar', avatarUrl: photo('photo-1500648767791-00dcc994a43e', 240), yearsHosting: 3, isSuperhost: false },
+    amenities: ['Acceso a la playa', 'Terraza', 'Cocina pequeña', 'Aire acondicionado', 'WiFi', 'Piscina compartida'],
+    images: [
+      photo('photo-1520250497591-112f2f40a3f4'),
+      photo('photo-1571896349842-33c89424de2d'),
+      photo('photo-1600607687939-ce8a6c25118c'),
+      photo('photo-1519046904884-53103b34b206'),
+    ],
+  },
+  {
+    id: '10',
+    title: 'Casa tropical con cocina al aire libre',
+    location: 'Puerto Morelos, México',
+    price: 125,
+    rating: 4.82,
+    reviewCount: 31,
+    category: 'trending',
+    description: 'Casa fresca y colorida con patio para cocinar y cenar bajo las estrellas. Está en una zona tranquila de Puerto Morelos, cerca del arrecife, la playa y los cafés de la plaza.',
+    maxGuests: 5,
+    host: { name: 'Fernanda Cruz', avatarUrl: photo('photo-1534528741775-53994a69daeb', 240), yearsHosting: 4, isSuperhost: true },
+    amenities: ['Patio privado', 'Parrilla', 'Cocina completa', 'Aire acondicionado', 'WiFi', 'Estacionamiento gratuito'],
+    images: [
+      photo('photo-1600585154340-be6161a56a0c'),
+      photo('photo-1600566753086-00f18fb6b3ea'),
+      photo('photo-1600210492486-724fe5c67fb0'),
+      photo('photo-1507525428034-b723cf961d3e'),
+    ],
+  },
+  {
+    id: '11',
+    title: 'Villa amplia entre la selva y el mar',
+    location: 'Tulum, México',
+    price: 320,
+    rating: 4.98,
+    reviewCount: 46,
+    category: 'mansion',
+    description: 'Villa privada de amplios espacios, piscina rodeada de vegetación y rincones para descansar en grupo. Está pensada para disfrutar Tulum con calma, entre playas, ruinas y cenas en casa.',
+    maxGuests: 10,
+    host: { name: 'Rafael Cárdenas', avatarUrl: photo('photo-1506794778202-cad84cf45f1d', 240), yearsHosting: 10, isSuperhost: true },
+    amenities: ['Piscina privada', 'Jardín tropical', 'Cocina completa', 'Aire acondicionado', 'WiFi', 'Servicio de limpieza'],
+    images: [
+      photo('photo-1613490493576-7fde63acd811'),
+      photo('photo-1613977257363-707ba9348227'),
+      photo('photo-1600607687920-4e2a09cf159d'),
+      photo('photo-1575429198097-ecb2f3c6b14d'),
+    ],
+  },
+  {
+    id: '12',
+    title: 'Cabaña tranquila frente a la laguna',
+    location: 'Bacalar, México',
+    price: 90,
+    rating: 4.91,
+    reviewCount: 39,
+    category: 'camping',
+    description: 'Cabaña sencilla junto a la laguna de los siete colores, con muelle compartido para nadar y ver salir el sol. Un lugar sereno para desconectar, remar y conocer Bacalar sin prisa.',
+    maxGuests: 3,
+    host: { name: 'Camila Reyes', avatarUrl: photo('photo-1531123897727-8f129e1688ce', 240), yearsHosting: 6, isSuperhost: true },
+    amenities: ['Acceso a la laguna', 'Muelle compartido', 'Kayaks', 'Cocina pequeña', 'Ventiladores', 'WiFi'],
+    images: [
+      photo('photo-1510798831971-661eb04b3739'),
+      photo('photo-1449158743715-0a90ebb6d2d8'),
+      photo('photo-1600210492486-724fe5c67fb0'),
+      photo('photo-1507525428034-b723cf961d3e'),
+    ],
+  },
+];

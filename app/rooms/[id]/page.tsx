@@ -1,71 +1,172 @@
-'use client'
+'use client';
 
-import Link from 'next/link'
-import { useParams } from 'next/navigation'
-import { Suspense } from 'react'
+import { useState, useEffect } from 'react';
+import { useParams } from 'next/navigation';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Suspense } from 'react';
+import Container from '../../components/ui/Container';
+import { ListingHeader, HostProfile, AmenitiesList, BookingWidget } from '../../components/features';
+import Title from '../../components/ui/Title';
+import Divider from '../../components/ui/Divider';
+import { mockProperties, type PropertyListing } from '../../data/properties';
 
 function RoomDetailContent() {
-  const params = useParams()
-  const id = params.id as string
+  const params = useParams();
+  const id = params.id as string;
+  const [roomState, setRoomState] = useState<{ id: string; room: PropertyListing } | null>(null);
+  const room = roomState?.id === id ? roomState.room : null;
+  const isLoading = room === null;
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const roomData = mockProperties.find((property) => property.id === id) || mockProperties[0];
+      setRoomState({ id, room: roomData });
+    }, 800);
+
+    return () => clearTimeout(timer);
+  }, [id]);
+
+  if (isLoading) {
+    return (
+      <Container className="py-12">
+        <div className="animate-pulse space-y-6">
+          <div className="bg-gray-200 h-96 rounded-lg" />
+          <div className="bg-gray-200 h-8 rounded w-1/2" />
+          <div className="bg-gray-200 h-6 rounded w-1/3" />
+        </div>
+      </Container>
+    );
+  }
+
+  if (!room) return null;
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
-      <div className="max-w-4xl mx-auto">
-        {/* Navegación superior */}
-        <nav className="flex items-center gap-4 mb-8">
-          <Link
-            href="/catalog"
-            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white border border-gray-300 hover:bg-gray-100 transition-colors"
-            title="Volver atrás"
-          >
-            ←
-          </Link>
-          <Link
-            href="/"
-            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white border border-gray-300 hover:bg-gray-100 transition-colors"
-            title="Ir al inicio"
-          >
-            ↑
-          </Link>
-          <h1 className="text-2xl font-bold">Detalle de Propiedad</h1>
-        </nav>
+    <div className="bg-white">
+      {/* Breadcrumb */}
+      <Container className="py-4">
+        <Link href="/catalog" className="text-rose-500 hover:text-rose-600 font-medium text-sm">
+          ← Volver al catálogo
+        </Link>
+      </Container>
 
-        {/* Contenido principal */}
-        <div className="bg-white rounded-lg shadow p-8 mb-6">
-          <h2 className="text-3xl font-bold mb-4">Propiedad ID: {id}</h2>
-          <p className="text-gray-600 text-lg mb-4">Este es el detalle de la propiedad {id}</p>
-          <div className="bg-gray-100 rounded-lg p-8 mb-4 h-64 flex items-center justify-center">
-            <p className="text-gray-500">Galería de imágenes de la propiedad</p>
+      {/* Image Gallery */}
+      <div className="grid h-[300px] grid-cols-1 gap-2 overflow-hidden sm:h-[420px] sm:grid-cols-4 sm:grid-rows-2">
+        {room.images.map((image, index) => (
+          <div key={`${room.id}-${index}`} className={`relative overflow-hidden ${index === 0 ? 'sm:col-span-2 sm:row-span-2' : 'hidden sm:block'}`}>
+            <Image
+              src={image}
+              alt={`${room.title}, foto ${index + 1}`}
+              fill
+              sizes="(max-width: 640px) 100vw, 50vw"
+              className="object-cover"
+              onError={(event) => {
+                event.currentTarget.src = 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=85';
+              }}
+            />
           </div>
-          <p className="text-gray-500">Información adicional sobre la propiedad, amenidades, disponibilidad, etc.</p>
-        </div>
+        ))}
+      </div>
 
-        {/* Botones de navegación */}
-        <div className="flex gap-4">
-          <Link
-            href="/catalog"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-700 transition-colors"
-          >
-            <span>←</span>
-            Volver al catálogo
-          </Link>
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors"
-          >
-            <span>↑</span>
-            Ir al inicio
-          </Link>
+      {/* Main Content */}
+      <Container className="py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Left Column - Details */}
+          <div className="lg:col-span-2 space-y-8">
+            {/* Header */}
+            <ListingHeader
+              title={room.title}
+              location={room.location}
+              rating={room.rating}
+              reviewCount={room.reviewCount}
+            />
+
+            {/* Description */}
+            <div>
+              <Title level={2} size="lg" className="mb-4">
+                Acerca de este alojamiento
+              </Title>
+              <p className="text-gray-600 leading-relaxed">
+                {room.description}
+              </p>
+            </div>
+
+            <Divider />
+
+            {/* Host Profile */}
+            <HostProfile
+              name={room.host.name}
+              avatarUrl={room.host.avatarUrl}
+              yearsHosting={room.host.yearsHosting}
+              isSuperhost={room.host.isSuperhost}
+            />
+
+            <Divider />
+
+            {/* Amenities */}
+            <AmenitiesList amenities={room.amenities.map((name, index) => ({ id: `${room.id}-${index}`, name, icon: null }))} />
+          </div>
+
+          {/* Right Column - Booking Widget */}
+          <div>
+            <BookingWidget
+              pricePerNight={room.price}
+              minGuests={1}
+              maxGuests={room.maxGuests}
+              onBook={(guests) => {
+                alert(`Reserva para ${guests} huésped${guests > 1 ? 'es' : ''} - Próximamente disponible`);
+              }}
+            />
+          </div>
         </div>
+      </Container>
+
+      {/* Additional Info Section */}
+      <div className="bg-gray-50 py-12 mt-8">
+        <Container>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {[
+              {
+                title: 'Cancelación flexible',
+                description: 'Cancela hasta 7 días antes de la llegada y recibe un reembolso total',
+              },
+              {
+                title: 'Comunicación segura',
+                description: 'Comunícate con el anfitrión a través de la plataforma',
+              },
+              {
+                title: 'Alojamiento verificado',
+                description: 'Este alojamiento ha sido verificado por nuestro equipo',
+              },
+            ].map((info, idx) => (
+              <div key={idx} className="text-center">
+                <Title level={3} size="base" className="mb-2">
+                  {info.title}
+                </Title>
+                <p className="text-gray-600 text-sm">{info.description}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
       </div>
     </div>
-  )
+  );
 }
 
 export default function RoomDetail() {
   return (
-    <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Cargando...</div>}>
+    <Suspense
+      fallback={
+        <Container className="py-12">
+          <div className="animate-pulse space-y-6">
+            <div className="bg-gray-200 h-96 rounded-lg" />
+            <div className="bg-gray-200 h-8 rounded w-1/2" />
+            <div className="bg-gray-200 h-6 rounded w-1/3" />
+          </div>
+        </Container>
+      }
+    >
       <RoomDetailContent />
     </Suspense>
-  )
+  );
 }
