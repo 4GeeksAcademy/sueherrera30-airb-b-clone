@@ -3,10 +3,9 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Suspense } from 'react';
 import Container from '../../components/ui/Container';
-import { ListingHeader, HostProfile, AmenitiesList, BookingWidget } from '../../components/features';
+import { ListingHeader, HostProfile, AmenitiesList, BookingWidget, ImageGallery } from '../../components/features';
 import Title from '../../components/ui/Title';
 import Divider from '../../components/ui/Divider';
 import { mockProperties, type PropertyListing } from '../../data/properties';
@@ -51,22 +50,7 @@ function RoomDetailContent() {
       </Container>
 
       {/* Image Gallery */}
-      <div className="grid h-[300px] grid-cols-1 gap-2 overflow-hidden sm:h-[420px] sm:grid-cols-4 sm:grid-rows-2">
-        {room.images.map((image, index) => (
-          <div key={`${room.id}-${index}`} className={`relative overflow-hidden ${index === 0 ? 'sm:col-span-2 sm:row-span-2' : 'hidden sm:block'}`}>
-            <Image
-              src={image}
-              alt={`${room.title}, foto ${index + 1}`}
-              fill
-              sizes="(max-width: 640px) 100vw, 50vw"
-              className="object-cover"
-              onError={(event) => {
-                event.currentTarget.src = 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=85';
-              }}
-            />
-          </div>
-        ))}
-      </div>
+      <ImageGallery images={room.images} title={room.title} />
 
       {/* Main Content */}
       <Container className="py-8">

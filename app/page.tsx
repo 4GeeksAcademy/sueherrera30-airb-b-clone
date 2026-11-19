@@ -6,28 +6,36 @@ import { CategoryFilter, ListingsGrid, PropertyCard } from './components/feature
 import Title from './components/ui/Title';
 import { mockProperties } from './data/properties';
 import type { PropertyListing } from './data/properties';
+import { useListingSearch } from './components/providers/SearchProvider';
 
 export default function Home() {
   const [properties, setProperties] = useState<PropertyListing[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const { searchTerm } = useListingSearch();
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      const visibleProperties = activeCategory
-        ? mockProperties.filter((property) => property.category === activeCategory)
-        : mockProperties.slice(0, 8);
-      setProperties(visibleProperties);
+      setProperties(mockProperties);
       setIsLoading(false);
     }, 1000);
     
     return () => clearTimeout(timer);
-  }, [activeCategory]);
+  }, []);
 
   const handleCategoryChange = (categoryId: string | null) => {
-    setIsLoading(true);
     setActiveCategory(categoryId);
   };
+
+  const normalizedSearch = searchTerm.trim().toLocaleLowerCase();
+  const matchingProperties = properties.filter((property) => {
+    const matchesCategory = !activeCategory || property.category === activeCategory;
+    const searchableText = `${property.title} ${property.location} ${property.description}`.toLocaleLowerCase();
+    return matchesCategory && searchableText.includes(normalizedSearch);
+  });
+  const visibleProperties = activeCategory || normalizedSearch
+    ? matchingProperties
+    : matchingProperties.slice(0, 8);
 
   return (
     <>
@@ -47,13 +55,14 @@ export default function Home() {
       <CategoryFilter onCategoryChange={handleCategoryChange} />
 
       {/* Properties Grid */}
-      <ListingsGrid isLoading={isLoading} total={properties.length}>
-        {properties.map((property) => (
+      <ListingsGrid isLoading={isLoading} total={visibleProperties.length}>
+        {visibleProperties.map((property) => (
           <PropertyCard
             key={property.id}
             id={property.id}
             title={property.title}
             location={property.location}
+            description={property.description}
             price={property.price}
             rating={property.rating}
             reviewCount={property.reviewCount}

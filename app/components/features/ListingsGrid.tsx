@@ -32,9 +32,13 @@ const ListingsGrid = ({ children, isLoading = false, total }: ListingsGridProps)
           {total} alojamientos
         </Title>
       )}
+      {total === 0 ? (
+        <p className="py-10 text-center text-gray-600">No encontramos alojamientos que coincidan con la búsqueda.</p>
+      ) : (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
         {children}
       </div>
+      )}
     </Container>
   );
 };

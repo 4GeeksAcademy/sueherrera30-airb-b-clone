@@ -8,6 +8,7 @@ interface PropertyCardProps {
   id: string;
   title: string;
   location: string;
+  description?: string;
   price: number;
   rating: number;
   reviewCount: number;
@@ -20,6 +21,7 @@ const PropertyCard = ({
   id,
   title,
   location,
+  description,
   price,
   rating,
   reviewCount,
@@ -76,6 +78,7 @@ const PropertyCard = ({
           <p className="text-xs sm:text-sm text-gray-600 line-clamp-1 mb-3">
             {location}
           </p>
+          {description && <p className="text-xs text-gray-600 line-clamp-2 mb-3">{description}</p>}
 
           {/* Rating and Price */}
           <div className="flex items-center justify-between">

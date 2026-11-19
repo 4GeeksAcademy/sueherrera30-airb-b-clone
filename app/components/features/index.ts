@@ -7,3 +7,4 @@ export { default as ListingHeader } from './ListingHeader';
 export { default as HostProfile } from './HostProfile';
 export { default as AmenitiesList } from './AmenitiesList';
 export { default as BookingWidget } from './BookingWidget';
+export { default as ImageGallery } from './ImageGallery';

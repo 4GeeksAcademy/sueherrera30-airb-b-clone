@@ -2,12 +2,12 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
 import Container from '../ui/Container';
+import { useListingSearch } from '../providers/SearchProvider';
 
 const Header = () => {
-  const [searchValue, setSearchValue] = useState('');
   const pathname = usePathname();
+  const { searchTerm, setSearchTerm } = useListingSearch();
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200">
@@ -34,9 +34,10 @@ const Header = () => {
             <div className="w-full border border-gray-300 rounded-full px-4 py-2 shadow-sm hover:shadow-md transition-shadow">
               <input
                 type="text"
+                aria-label="Buscar alojamientos por nombre o destino"
                 placeholder="Buscar alojamientos"
-                value={searchValue}
-                onChange={(e) => setSearchValue(e.target.value)}
+                value={searchTerm}
+                onChange={(event) => setSearchTerm(event.target.value)}
                 className="w-full bg-transparent text-sm text-gray-900 placeholder-gray-500 focus:outline-none"
               />
             </div>
@@ -68,9 +69,10 @@ const Header = () => {
             </svg>
             <input
               type="text"
+              aria-label="Buscar alojamientos por nombre o destino"
               placeholder="Buscar"
-              value={searchValue}
-              onChange={(e) => setSearchValue(e.target.value)}
+              value={searchTerm}
+              onChange={(event) => setSearchTerm(event.target.value)}
               className="flex-1 bg-transparent text-sm text-gray-900 placeholder-gray-500 focus:outline-none"
             />
           </div>
