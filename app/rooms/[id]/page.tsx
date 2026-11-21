@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import Container from '../../components/ui/Container';
@@ -12,7 +12,7 @@ import RoomNotFound from '../../components/features/RoomNotFound';
 import { mockProperties } from '../../data/properties';
 import type { Room } from '../../types/room';
 
-const RoomDetail = () => {
+const RoomDetailContent = () => {
   const { id } = useParams<{ id: string }>();
   const [loadedRoom, setLoadedRoom] = useState<{ id: string; room: Room | null } | null>(null);
   const isLoading = loadedRoom?.id !== id;
@@ -44,5 +44,11 @@ const RoomDetail = () => {
     </div>
   );
 };
+
+const RoomDetail = () => (
+  <Suspense fallback={<RoomLoading />}>
+    <RoomDetailContent />
+  </Suspense>
+);
 
 export default RoomDetail;

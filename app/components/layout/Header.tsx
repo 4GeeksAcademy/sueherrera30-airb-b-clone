@@ -1,11 +1,12 @@
 'use client';
 
 import Link from 'next/link';
+import { Suspense } from 'react';
 import { usePathname } from 'next/navigation';
 import Container from '../ui/Container';
 import { useListingSearch } from '../providers/SearchProvider';
 
-const Header = () => {
+const HeaderContent = () => {
   const pathname = usePathname();
   const { searchTerm, setSearchTerm } = useListingSearch();
 
@@ -81,5 +82,19 @@ const Header = () => {
     </header>
   );
 };
+
+const Header = () => (
+  <Suspense fallback={
+    <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200">
+      <div className="max-w-6xl mx-auto px-4 py-3 sm:py-4">
+        <div className="flex items-center justify-between gap-4">
+          <div className="text-xl sm:text-2xl font-bold text-rose-500">airbnb</div>
+        </div>
+      </div>
+    </header>
+  }>
+    <HeaderContent />
+  </Suspense>
+);
 
 export default Header;

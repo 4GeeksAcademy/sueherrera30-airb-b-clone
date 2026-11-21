@@ -1,5 +1,5 @@
 {
-  "/favorites/page": "app/favorites/page.js",
-  "/login/page": "app/login/page.js",
-  "/page": "app/page.js"
+  "/catalog/page": "app/catalog/page.js",
+  "/page": "app/page.js",
+  "/rooms/[id]/page": "app/rooms/[id]/page.js"
 }

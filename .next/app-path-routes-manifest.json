@@ -3,6 +3,8 @@
   "/_not-found/page": "/_not-found",
   "/catalog/page": "/catalog",
   "/favicon.ico/route": "/favicon.ico",
+  "/favorites/page": "/favorites",
+  "/login/page": "/login",
   "/page": "/",
   "/rooms/[id]/page": "/rooms/[id]"
 }

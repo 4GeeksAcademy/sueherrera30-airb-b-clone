@@ -28,7 +28,16 @@
       "routeKeys": {
         "nxtPid": "nxtPid"
       },
-      "namedRegex": "^/rooms/(?<nxtPid>[^/]+?)(?:/)?$"
+      "namedRegex": "^/rooms/(?<nxtPid>[^/]+?)(?:/)?$",
+      "prefetchSegmentDataRoutes": [
+        {
+          "destination": "/rooms/[id].segments/rooms/$d$id$segment",
+          "source": "^/rooms/(?<nxtPid>[^/]+?)\\.segments/rooms/\\$d\\$id(?<segment>/__PAGE__\\.segment\\.rsc|\\.segment\\.rsc)(?:/)?$",
+          "routeKeys": {
+            "nxtPid": "nxtPid"
+          }
+        }
+      ]
     }
   ],
   "staticRoutes": [
@@ -61,6 +70,18 @@
       "regex": "^/favicon\\.ico(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/favicon\\.ico(?:/)?$"
+    },
+    {
+      "page": "/favorites",
+      "regex": "^/favorites(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/favorites(?:/)?$"
+    },
+    {
+      "page": "/login",
+      "regex": "^/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/login(?:/)?$"
     }
   ],
   "dataRoutes": [],
